@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Flask app banate hain
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Model load karna (maan lo aapne model.pkl banaya hai)
 model = pickle.load(open("model.pkl", "rb"))
@@ -28,7 +28,7 @@ def predict():
 
     return jsonify({"Predicted Price": round(prediction, 2)})
 
-if __name__ == "_main_":
+if _name_ == "_main_":
     import os
     port = int( os.environ.get("PORT",5000))
     app.run(host="0.0.0.0", port=port)
